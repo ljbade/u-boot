@@ -6,8 +6,38 @@ config SYS_SOC
 config SYS_VENDOR
 	default "mediatek"
 
+config MT7622
+	bool
+
+config MT7623
+	bool
+
+config MT7629
+	bool
+
+config MT7981
+	bool
+
+config MT7986
+	bool
+
+config MT7988
+	bool
+
+config MT8183
+	bool
+
+config MT8365
+        bool
+
 config MT8512
-	bool "MediaTek MT8512 SoC"
+	bool
+
+config MT8516
+	bool
+
+config MT8518
+	bool
 
 choice
 	prompt "MediaTek board select"
@@ -15,6 +45,7 @@ choice
 config TARGET_MT7622
 	bool "MediaTek MT7622 SoC"
 	select ARM64
+	select MT7622
 	help
 	  The MediaTek MT7622 is a ARM64-based SoC with a dual-core Cortex-A53.
 	  including UART, SPI, USB3.0, SD and MMC cards, NAND, SNFI, PWM, PCIe,
@@ -24,6 +55,7 @@ config TARGET_MT7623
 	bool "MediaTek MT7623 SoC"
 	select CPU_V7A
 	select MMC_SUPPORTS_TUNING
+	select MT7623
 	help
 	  The MediaTek MT7623 is a ARM-based SoC with a quad-core Cortex-A7
 	  including NEON and GPU, Mali-450 graphics, several DDR3 options,
@@ -36,6 +68,7 @@ config TARGET_MT7629
 	bool "MediaTek MT7629 SoC"
 	select CPU_V7A
 	select SPL
+	select MT7629
 	help
 	  The MediaTek MT7629 is a ARM-based SoC with a dual-core Cortex-A7
 	  including DDR3, crypto engine, 3x3 11n/ac Wi-Fi, Gigabit Ethernet,
@@ -45,6 +78,7 @@ config TARGET_MT7981
 	bool "MediaTek MT7981 SoC"
 	select ARM64
 	select CPU
+	select MT7981
 	help
 	  The MediaTek MT7981 is a ARM64-based SoC with a dual-core Cortex-A53.
 	  including UART, SPI, USB, NAND, SNFI, PWM, Gigabit Ethernet, I2C,
@@ -54,6 +88,7 @@ config TARGET_MT7986
 	bool "MediaTek MT7986 SoC"
 	select ARM64
 	select CPU
+	select MT7986
 	help
 	  The MediaTek MT7986 is a ARM64-based SoC with a quad-core Cortex-A53.
 	  including UART, SPI, SPI flash, USB3.0, MMC, NAND, SNFI, PWM, PCIe,
@@ -63,6 +98,7 @@ config TARGET_MT7988
 	bool "MediaTek MT7988 SoC"
 	select ARM64
 	select CPU
+	select MT7988
 	help
 	  The MediaTek MT7988 is a ARM64-based SoC with a quad-core Cortex-A73.
 	  including UART, SPI, SPI flash, USB3.0, MMC, NAND, SNFI, PWM, PCIe,
@@ -71,6 +107,7 @@ config TARGET_MT7988
 config TARGET_MT8183
 	bool "MediaTek MT8183 SoC"
 	select ARM64
+	select MT8183
 	help
 	  The MediaTek MT8183 is a ARM64-based SoC with a quad-core Cortex-A73 and
 	  a quad-core Cortex-A53. It is including UART, SPI, USB3.0 dual role,
@@ -80,6 +117,7 @@ config TARGET_MT8183
 config TARGET_MT8365
 	bool "MediaTek MT8365 SoC"
 	select ARM64
+	select MT8365
 	help
 	  The MediaTek MT8365 is a ARM64-based SoC with a quad-core Cortex-A53.
 	  It is including UART, SPI, USB2.0 dual role, SD and MMC cards, NAND, PWM,
@@ -98,6 +136,7 @@ config TARGET_MT8512
 config TARGET_MT8516
 	bool "MediaTek MT8516 SoC"
 	select ARM64
+	select MT8516
 	help
 	  The MediaTek MT8516 is a ARM64-based SoC with a quad-core Cortex-A35.
 	  including UART, SPI, USB2.0 and OTG, SD and MMC cards, NAND, PWM,
@@ -107,6 +146,7 @@ config TARGET_MT8516
 config TARGET_MT8518
 	bool "MediaTek MT8518 SoC"
 	select ARM64
+	select MT8518
 	help
 	  The MediaTek MT8518 is a ARM64-based SoC with a quad-core Cortex-A53.
 	  including UART, SPI, USB2.0 and OTG, SD and MMC cards, NAND, PWM,
@@ -124,6 +164,7 @@ config SYS_BOARD
 	default "mt7986" if TARGET_MT7986
 	default "mt7988" if TARGET_MT7988
 	default "mt8183" if TARGET_MT8183
+        default "mt8365" if TARGET_MT8365
 	default "mt8512" if TARGET_MT8512
 	default "mt8516" if TARGET_MT8516
 	default "mt8518" if TARGET_MT8518
